@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <hr>
+<div class="container" >
+<div class="row justify-content-center" >
+    <span class="border border-info rounded-lg" style="background-color: lightgreen">
+        <h3 class="text-primary">{{ employee.first_name }} {{ employee.last_name }}</h3>
+        <hr>
+        <p>Email ID: {{ employee.email_id }}</p>
+        <p>Phone Number: {{ employee.phone_num }}</p>
+        <p>Gender: {{ employee.employee_gender }}</p>
+        <p>Address: {{ employee.employee_address }}</p>
+        <p>Job:
+            {% for job in employee.employee_job.all %}
+                <em>
+                    {{ job.name }}
+                </em>
+            {% endfor %}
+</p>
+<p>DOB:{{ employee.date_of_birth }}</p>
+    </span>
+</div>
+</div>
+</div>
+
+{% endblock %}
